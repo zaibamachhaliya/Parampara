@@ -173,3 +173,26 @@
     cursor: not-allowed;
 }
 
+
+
+/* Fix: Remove extra space below footer */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main.paths-container {
+    flex: 1;
+}
+
+.footer {
+    margin: 0;
+}
