@@ -42,7 +42,7 @@
     border: 2px solid var(--accent-color);
     border-radius: var(--border-radius);
     background: var(--warm-beige);
-    color: var(--text-dark);
+    color:var(--wheat-yellow);
     font-size: 1rem;
 }
 
@@ -58,7 +58,7 @@
     border: 2px solid var(--accent-color);
     border-radius: var(--border-radius);
     background: var(--warm-beige);
-    color: var(--text-dark);
+    color: var(--warm-beige);
     font-size: 1rem;
     cursor: pointer;
 }
