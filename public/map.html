@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/map.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
+
 <body>
     <nav class="navbar">
          <div class="nav-container">
@@ -62,10 +63,16 @@
         <div class="map-header">
             <h2>Digital Time-Travel: Explore Rural Heritage</h2>
             <p>Click on villages to discover their unique traditions, festivals, and crafts</p>
-            <div class="map-controls">
-                <button id="toggle-heatmap" class="btn btn-secondary">Toggle Heatmap</button>
-                <button id="toggle-sound" class="btn btn-secondary">Ambient Sounds: ON</button>
-            </div>
+           <div class="map-controls">
+    <select id="language-selector" class="btn btn-secondary">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+    </select>
+
+    <button id="toggle-heatmap" class="btn btn-secondary">Toggle Heatmap</button>
+    <button id="toggle-sound" class="btn btn-secondary">Ambient Sounds: ON</button>
+</div>
         </div>
         
         <div id="map" class="map-view"></div>
@@ -87,6 +94,11 @@
         </div>
     </footer>
 
+    <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> -->
+<!-- Back To Top Button -->
+<button id="backToTopBtn" aria-label="Back to top">
+    ↑
+</button>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="scripts/map.js"></script>
       <script src="scripts/main.js" ></script>
