@@ -8,7 +8,6 @@ const translations = {
 
         clickVillage:
             "Click on a village marker to see details",
-
         traditions: "Traditions",
         festivals: "Festivals",
         crafts: "Crafts",
@@ -17,23 +16,19 @@ const translations = {
 
         toggleHeatmap: "Toggle Heatmap",
         hideHeatmap: "Hide Heatmap",
-
         soundOn: "Ambient Sounds: ON",
         soundOff: "Ambient Sounds: OFF",
-
         description: "Description",
-
-
         mapConfigMessage:
             "Map tiles require a MapTiler API key. Please add MAPTILER_KEY to your .env file.",
         mapConfigHint:
             "Copy .env.example to .env and add a free key from maptiler.com",
         location: "Location",
-        tags: "Tags"
+        tags: "Tags",
 
         trailsTitle: "Heritage Trails & Local Hosts",
         trailsDesc: "Plan responsible visits to villages, meet cultural hosts, and support local artisans",
-        trailDetailsTitle: "Trail Details"
+        trailDetailsTitle: "Trail Details",
 
     },
 
@@ -42,12 +37,9 @@ const translations = {
 
         mapDescription:
             "गांवों पर क्लिक करके उनकी परंपराओं, त्योहारों और हस्तशिल्प को जानें",
-
         selectVillage: "एक गांव चुनें",
-
         clickVillage:
             "विवरण देखने के लिए किसी गांव पर क्लिक करें",
-
         traditions: "परंपराएँ",
         festivals: "त्योहार",
         crafts: "हस्तशिल्प",
@@ -104,7 +96,7 @@ trailDetailsTitle: "ट्रेल विवरण",
         mapConfigHint:
             ".env.example ला .env मध्ये कॉपी करा आणि maptiler.com वरून विनामूल्य की जोडा",
         location: "स्थान",
-        tags: "टॅग"
+        tags: "टॅग",
 
         trailsTitle: "वारसा ट्रेल्स आणि स्थानिक होस्ट",
         trailsDesc: "गावांना जबाबदारीने भेट द्या आणि कलाकारांना भेटा",

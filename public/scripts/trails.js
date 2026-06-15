@@ -51,7 +51,7 @@ const sampleTrails = [
             distanceKey:  'trail2_distance',
             transportKey: 'trail2_transport'
         }
-    },
+    }, 
     {
         id: 'trail-3',
         titleKey:       'trail3_title',
