@@ -14,30 +14,32 @@ let currentLanguage =
 
 document.addEventListener('DOMContentLoaded', () => {
   const selector = document.getElementById('language-selector');
-  selector.value = currentLanguage;
 
-  selector.addEventListener('change', (e) => {
-    currentLanguage = e.target.value;
+  if (selector) {
+    selector.value = currentLanguage;
 
-    localStorage.setItem('parampara_lang', currentLanguage);
-    localStorage.setItem('language', currentLanguage);
+    selector.addEventListener('change', (e) => {
+      currentLanguage = e.target.value;
 
-    if (map && map.isStyleLoaded()) {
-      setMapLanguage(currentLanguage);
-    }
+      localStorage.setItem('parampara_lang', currentLanguage);
+      localStorage.setItem('language', currentLanguage);
 
-    if (map) {
-      addVillageMarkers();
-    }
+      if (map && map.isStyleLoaded()) {
+        setMapLanguage(currentLanguage);
+      }
 
-    translatePage();
-  });
+      if (map) {
+        addVillageMarkers();
+      }
+
+      translatePage();
+    });
+  }
 
   initializeMap();
   setupEventListeners();
   translatePage();
 });
-
 const sampleVillages = [
   {
     name: {
@@ -175,12 +177,13 @@ function getTranslation() {
 function translatePage() {
   const t = getTranslation();
 
-  document.querySelector('.map-header h2').textContent = t.mapTitle;
+  const title = document.querySelector('.map-header h2');
+const subtitle = document.querySelector('.map-header p');
+const villageName = document.getElementById('village-name');
 
-  document.querySelector('.map-header p').textContent = t.mapDescription;
-
-  document.getElementById('village-name').textContent = t.selectVillage;
-
+if (title) title.textContent = t.mapTitle;
+if (subtitle) subtitle.textContent = t.mapDescription;
+if (villageName) villageName.textContent = t.selectVillage;
   document.getElementById('info-content').innerHTML =
     `<p>${t.clickVillage}</p>`;
 
