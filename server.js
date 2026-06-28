@@ -18,6 +18,7 @@ const storyRoutes = require('./routes/story.routes');
 const auditRoutes = require('./routes/audit.routes');
 const csrfRoutes = require('./routes/csrf.routes');
 const cacheRoutes = require('./routes/cache.routes');
+const analyticsRoutes = require('./routes/analytics.routes');
 const { csrfProtection } = require('./middleware/csrf');
 
 const store = require('./data/store');
@@ -126,6 +127,7 @@ app.use('/api/story-generator', storyRoutes);
 app.use('/api/artisans', artisanRoutes);
 app.use('/api/audit', auditRoutes);
 app.use('/api/cache', cacheRoutes);
+app.use('/api/analytics', analyticsRoutes);
 app.get('/api/reputation', (req, res, next) => {
   try {
     const contributors = store.contributors || [];

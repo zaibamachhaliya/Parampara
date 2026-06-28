@@ -203,7 +203,12 @@ async function loadGalleryItems(page = 1, append = false) {
     
     let url = `/api/items?page=${page}&limit=${limit}`;
     if (typeFilter !== 'all') url += `&type=${typeFilter}`;
-    if (searchTerm) url += `&search=${encodeURIComponent(searchTerm)}`;
+    if (searchTerm) {
+      url += `&search=${encodeURIComponent(searchTerm)}`;
+      if (window.Telemetry) {
+        window.Telemetry.track('search', { query: searchTerm, type: typeFilter });
+      }
+    }
 
     const response = await fetch(url);
     const result = await response.json();
@@ -476,6 +481,7 @@ function viewItem(id) {
   if (itemIndex === -1) return;
 
   if (window.webglLightbox) {
+    if (window.Telemetry) window.Telemetry.track('item_view', { itemId: id });
     window.webglLightbox.open(allItems, itemIndex);
     return;
   }
@@ -485,9 +491,12 @@ function viewItem(id) {
   const img = document.getElementById('lightbox-image');
   
   if (!lightbox) {
+    if (window.Telemetry) window.Telemetry.track('item_view', { itemId: id });
     alert(`${tGallery('gallery_viewing')}: ${item.title}\n\n${item.description}`);
     return;
   }
+  
+  if (window.Telemetry) window.Telemetry.track('item_view', { itemId: id, title: item.title });
   
   // Set Info
   document.getElementById('lightbox-title').textContent = item.title;
